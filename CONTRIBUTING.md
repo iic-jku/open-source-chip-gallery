@@ -9,8 +9,8 @@ All steps that need tools are run inside the [IIC-OSIC-TOOLS](https://github.com
 1. Create a directory named `<pdk>-<design>-<shuttle>`:
    - `<pdk>` is the PDK the chip was designed in, for example `ihp-sg13g2`, `ihp-sg13cmos`, `ihp-sg13cmos5l`, `gf180mcuD` or `sky130A`.
    - `<design>` is a short lowercase name of the design, for example `sparx`, `tinywhisper` or `mpc` for a multi-project chip.
-   - `<shuttle>` is `mpw` for an IHP MPW run, `ws-run<N>` for wafer.space run `<N>` and the shuttle name for Tiny Tapeout, for example `ttsky25b`.
-   - If the name is already taken by an earlier tapeout of the same design, append the year and month of the new tapeout, for example `ihp-sg13cmos-sparx-mpw-2027-03`.
+   - `<shuttle>` names the exact run, so a design that is taped out again gets a new directory. It is `mpw-<YYYY>-<MM>` with the year and month of the tapeout for an IHP MPW run, `ws-run<N>` for wafer.space run `<N>` and the shuttle name for Tiny Tapeout, for example `ttsky25b`.
+   - Examples: `ihp-sg13cmos-sparx-mpw-2026-03`, `gf180mcuD-mpc-ws-run1` and `sky130A-iqmod-ttsky25b`.
 
 2. Copy the final layout into the directory as `<directory>_top.gds`. Do not rename the top cell inside the layout, so it can be traced back to the design repository. Large layouts are stored gzipped (`<directory>_top.gds.gz`) or as OASIS (`<directory>_top.oas`), which is usually much smaller. GitHub warns about files above 50 MB and rejects files above 100 MB. A layout is converted to OASIS with:
 

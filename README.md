@@ -20,7 +20,7 @@ The chips are listed with the most recent tapeout first. The designers of each c
 
 Every chip has its own directory with the final layout (GDS/OASIS) and the rendered layout images. All files carry the name of the directory they live in, so the layout is `<directory>_top` and the two renders are `<directory>_white.png` and `<directory>_black.png`. Further images, such as a pinout or photos of the fabricated die, are named `<directory>_<description>.png`. The original top cell names are kept inside the layout files.
 
-The images are created with `sak-render.py` from [IIC-OSIC-TOOLS](https://github.com/iic-jku/IIC-OSIC-TOOLS), which draws the physical mask layers in the layer colors of the PDK and hides fill and dummy shapes. Every layout is rendered on both a white and a black background. The white version is shown below. To re-render the images, run the following command in a chip directory inside the IIC-OSIC-TOOLS container:
+The images are created with `sak-render.py` from [IIC-OSIC-TOOLS](https://github.com/iic-jku/IIC-OSIC-TOOLS), which draws the physical mask layers in the layer colors of the PDK and hides fill and dummy shapes. Every layout is rendered on both a white and a black background. The white version is shown below, unless the design repository provides a labeled pinout, as for SPARX. To re-render the images, run the following command in a chip directory inside the IIC-OSIC-TOOLS container:
 
 ```sh
 sak-render.py -t <ihp-sg13g2|ihp-sg13cmos5l|gf180mcuD|sky130A> -w 2048 -s 4 -o <directory>.png <layout>
@@ -35,18 +35,15 @@ The structure of this gallery is inspired by [mole99/chip-gallery](https://githu
 An open-source, frequency-scalable six-port millimeter-wave receiver.
 
 <div align="center">
-  <img src="ihp-sg13cmos-sparx-mpw-2026-03/ihp-sg13cmos-sparx-mpw-2026-03_white.png" alt="SPARX" width="600">
-  <p><em>Render of the ihp-sg13cmos SPARX RFIC (1mm x 1.4mm).</em></p>
+  <img src="ihp-sg13cmos-sparx-mpw-2026-03/ihp-sg13cmos-sparx-mpw-2026-03_pinout.png" alt="SPARX" width="600">
+  <p><em>Render of the 160 GHz ihp-sg13cmos SPARX RFIC with pinout (1mm x 1.4mm).</em></p>
 </div>
 
 SPARX ("Six-Port Automated Receiver (RX)") is a six-port receiver in IHP SG13CMOS (130 nm). The whole layout is generated in Python with custom RF devices built as a GDSFactory add-on for the IHP PDK. This way, the design can be scaled to any frequency between 60 GHz and 300 GHz without manual layout work. It was taped out in March 2026, on the same day as [TinyWhisper](#tinywhisper-ihp-mpw-tapeout).
 
-The render above shows the default 160 GHz variant, which is kept as the top cell `sparx160_top` inside the layout. The pinout below labels the bandpass filter (BPF), the Wilkinson power divider (WPD), the three branch-line couplers (BLC) and the four power detectors (PD). The LO input is on the left and the RF input is on the right. The supply and detector output pads are at the top and bottom.
+The image above shows the default 160 GHz variant, which is kept as the top cell `sparx160_top` inside the layout. The LO enters on the left, passes the bandpass filter (BPF) and is split by the Wilkinson power divider (WPD) between the upper and the lower branch-line coupler (BLC). The RF enters on the right and is split by a third BLC, whose fourth port is terminated by R1. The upper and the lower BLC each drive two Schottky diode power detectors (PD). Every detector has an OUT pad and a REF pad from its replica circuit, so its output can be measured fully differentially.
 
-<div align="center">
-  <img src="ihp-sg13cmos-sparx-mpw-2026-03/ihp-sg13cmos-sparx-mpw-2026-03_pinout.png" alt="SPARX pinout" width="600">
-  <p><em>Pinout of the 160 GHz SPARX RFIC with the Metal5 ground plane (1mm x 1.4mm).</em></p>
-</div>
+For the measurements, the LO and RF pads will be contacted with a wafer prober, and the supply and detector pads at the top and bottom will be bonded to a PCB.
 
 - Designers: Simon Dorrer, David Kellerer-Pirklbauer and Harald Pretl
 - Technology: IHP SG13CMOS (130 nm)

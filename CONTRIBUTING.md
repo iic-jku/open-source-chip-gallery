@@ -27,7 +27,7 @@ All steps that need tools are run inside the [IIC-OSIC-TOOLS](https://github.com
 
    This writes `<directory>_white.png` and `<directory>_black.png`. The `-o` option is needed because the image names are otherwise taken from the layout file name. `<tech>` is one of `ihp-sg13g2`, `ihp-sg13cmos5l`, `gf180mcuD` or `sky130A`. SG13CMOS layouts are rendered with `ihp-sg13g2`, which uses the same layer stack. Fill and dummy shapes are hidden by default. Do not edit the images by hand, so they can always be reproduced from the layout.
 
-4. Further images are welcome, for example a pinout or photos of the fabricated die. Take them from the design repository where possible and name them `<directory>_<description>.png` with a short lowercase description, for example `<directory>_pinout.png` or `<directory>_cob.png`. Keep each image below a few MB.
+4. Further images are welcome, for example a pinout or photos of the fabricated die. Take them from the design repository where possible and name them `<directory>_<description>.png` with a short lowercase description, for example `<directory>_pinout.png` or `<directory>_cob.png`. Keep each image below a few MB. A labeled pinout can replace the white render as the main image of the section, as in the SPARX section. The renders stay in the directory either way.
 
 5. Add a section for the chip to [README.md](README.md) with the [template](#section-template) below. Place it by tapeout date, with the most recent tapeout first.
 
@@ -43,7 +43,7 @@ All steps that need tools are run inside the [IIC-OSIC-TOOLS](https://github.com
 
 ## Section Template
 
-Replace everything in angle brackets and remove the bullets that do not apply. The shuttle in the heading is written like in the existing sections, for example `IHP MPW Tapeout`, `wafer.space` or `Tiny Tapeout`. Further bullets for the main features and building blocks of the chip are welcome. Additional images, such as a pinout or chip photos, go below the first paragraph in the same `<div>` format as the render, each with its own caption. Two photos with the same aspect ratio can be placed side by side with `width="45%"` and one caption, as in the multi-project chip section.
+Replace everything in angle brackets and remove the bullets that do not apply. The shuttle in the heading is written like in the existing sections, for example `IHP MPW Tapeout`, `wafer.space` or `Tiny Tapeout`. Further bullets for the main features and building blocks of the chip are welcome. The main image is the white render or a labeled pinout (see step 4). Additional images, such as chip photos, go below the first paragraph in the same `<div>` format, each with its own caption. Two photos with the same aspect ratio can be placed side by side with `width="45%"` and one caption, as in the multi-project chip section.
 
 ```markdown
 # <Chip Name> (<Shuttle>)

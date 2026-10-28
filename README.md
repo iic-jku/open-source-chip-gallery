@@ -16,6 +16,12 @@ This gallery collects the open-source chips that were designed and taped out at 
 
 The chips are listed with the most recent tapeout first. The designers of each chip are given in the order of its design repository, and they are from JKU unless another affiliation is noted. To add a new chip or to update an existing one, follow the steps in [CONTRIBUTING.md](CONTRIBUTING.md).
 
+Most of the chips shown in this gallery are based on the following templates:
+- **ihp-sg13g2**: [ihp-sg13g2-ams-chip-template](https://github.com/iic-jku/ihp-sg13g2-ams-chip-template)
+- **ihp-sg13cmos5l**: [ihp-sg13cmos5l-ams-chip-template](https://github.com/iic-jku/ihp-sg13cmos5l-ams-chip-template)
+- **sky130A**: [sky130A-ams-chip-template](https://github.com/iic-jku/sky130A-ams-chip-template)
+- **gf180mcuD**: [gf180mcuD-ams-chip-template](https://github.com/iic-jku/gf180mcuD-ams-chip-template)
+
 Every chip has its own directory with the final layout (GDS/OASIS) and the rendered layout images. All files carry the name of the directory they live in, so the layout is `<directory>_top` and the two renders are `<directory>_white.png` and `<directory>_black.png`. Further images, such as a pinout or photos of the fabricated die, are named `<directory>_<description>.png`. The original top cell names are kept inside the layout files.
 
 The images are created with `sak-render.py` from [IIC-OSIC-TOOLS](https://github.com/iic-jku/IIC-OSIC-TOOLS), which draws the physical mask layers in the layer colors of the PDK and hides fill and dummy shapes. Every layout is rendered on both a white and a black background. The white version is shown below, unless the design repository provides a labeled pinout, as for SPARX. To re-render the images, run the following command in a chip directory inside the IIC-OSIC-TOOLS container:

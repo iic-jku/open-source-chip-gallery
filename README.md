@@ -18,7 +18,7 @@ This gallery collects the open-source chips that were designed and taped out at 
 
 The chips are listed with the most recent tapeout first. The designers of each chip are given in the order of its design repository, and they are from JKU unless another affiliation is noted. To add a new chip or to update an existing one, follow the steps in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Every chip has its own directory with the final layout (GDS/OASIS) and the rendered layout images. All files carry the name of the directory they live in, so the layout is `<directory>_top` and the two renders are `<directory>_white.png` and `<directory>_black.png`. The original top cell names are kept inside the layout files.
+Every chip has its own directory with the final layout (GDS/OASIS) and the rendered layout images. All files carry the name of the directory they live in, so the layout is `<directory>_top` and the two renders are `<directory>_white.png` and `<directory>_black.png`. Further images, such as a pinout or photos of the fabricated die, are named `<directory>_<description>.png`. The original top cell names are kept inside the layout files.
 
 The images are created with `sak-render.py` from [IIC-OSIC-TOOLS](https://github.com/iic-jku/IIC-OSIC-TOOLS), which draws the physical mask layers in the layer colors of the PDK and hides fill and dummy shapes. Every layout is rendered on both a white and a black background. The white version is shown below. To re-render the images, run the following command in a chip directory inside the IIC-OSIC-TOOLS container:
 
@@ -41,7 +41,12 @@ An open-source, frequency-scalable six-port millimeter-wave receiver.
 
 SPARX ("Six-Port Automated Receiver (RX)") is a six-port receiver in IHP SG13CMOS (130 nm). The whole layout is generated in Python with custom RF devices built as a GDSFactory add-on for the IHP PDK. This way, the design can be scaled to any frequency between 60 GHz and 300 GHz without manual layout work. It was taped out in March 2026, on the same day as [TinyWhisper](#tinywhisper-ihp-mpw-tapeout).
 
-The image above shows the default 160 GHz variant, which is kept as the top cell `sparx160_top` inside the layout.
+The render above shows the default 160 GHz variant, which is kept as the top cell `sparx160_top` inside the layout. The pinout below labels the bandpass filter (BPF), the Wilkinson power divider (WPD), the three branch-line couplers (BLC) and the four power detectors (PD). The LO input is on the left and the RF input is on the right. The supply and detector output pads are at the top and bottom.
+
+<div align="center">
+  <img src="ihp-sg13cmos-sparx-mpw-2026-03/ihp-sg13cmos-sparx-mpw-2026-03_pinout.png" alt="SPARX pinout" width="600">
+  <p><em>Pinout of the 160 GHz SPARX RFIC with the Metal5 ground plane (1mm x 1.4mm).</em></p>
+</div>
 
 - Designers: Simon Dorrer, David Kellerer-Pirklbauer and Harald Pretl
 - Technology: IHP SG13CMOS (130 nm)
@@ -102,6 +107,13 @@ A shared die for student and research designs from JKU.
 
 This multi-project chip collects designs from students and researchers at the IICQC at JKU Linz on a single die, with contributions from JMU Würzburg, HTL Leonding and the Linzer Technikum. It was submitted to the first [wafer.space](https://wafer.space/) shuttle in December 2025 using the gf180mcuD PDK. The chips have been delivered, and a first bring-up test on a wire-bonded die shows that the chip is alive.
 
+<div align="center">
+  <img src="gf180mcuD-mpc-ws-run1/gf180mcuD-mpc-ws-run1_cob.png" alt="Wire-bonded die of the multi-project chip" width="45%">
+  &nbsp;
+  <img src="gf180mcuD-mpc-ws-run1/gf180mcuD-mpc-ws-run1_cob_ruler.png" alt="Micrograph of the wire-bonded die next to a ruler" width="45%">
+  <p><em>Chip-on-Board (CoB) wire-bonded die of the gf180mcuD multi-project chip (left) and a micrograph of the bonded die next to a ruler (right).</em></p>
+</div>
+
 - Designers: Simon Dorrer, Jonathan Hager (JMU Würzburg), Dominik Brandstetter and the project designers listed below
 - Technology: GlobalFoundries GF180MCU (180 nm), gf180mcuD PDK variant
 - Die size: 4mm x 5mm
@@ -151,4 +163,4 @@ Repositories: https://github.com/iic-jku/tt-sky-jku-jmu-TinyWhisper and https://
 
 # License
 
-This repository is licensed under the [Apache License 2.0](LICENSE) unless noted otherwise. The chip layouts keep the licenses of the design repositories that are linked in each chip section.
+This repository is licensed under the [Apache License 2.0](LICENSE) unless noted otherwise. The chip layouts and the images taken from the design repositories, such as pinouts and chip photos, keep the licenses of the design repositories that are linked in each chip section.

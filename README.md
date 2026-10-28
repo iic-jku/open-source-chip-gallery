@@ -11,8 +11,8 @@ This gallery collects the open-source chips that were designed and taped out at 
 
 | Chip | Technology | Shuttle | Tapeout | Die Size | Directory |
 | ---- | ---------- | ------- | ------- | -------- | --------- |
-| [SPARX](#sparx-ihp-mpw-tapeout) | IHP SG13CMOS (130 nm) | IHP MPW | March 2026 | 1mm x 1.4mm | [`ihp-sg13cmos-sparx-mpw`](ihp-sg13cmos-sparx-mpw) |
-| [TinyWhisper](#tinywhisper-ihp-mpw-tapeout) | IHP SG13CMOS (130 nm) | IHP MPW | March 2026 | 2mm x 2mm | [`ihp-sg13cmos-tinywhisper-mpw`](ihp-sg13cmos-tinywhisper-mpw) |
+| [SPARX](#sparx-ihp-mpw-tapeout) | IHP SG13CMOS (130 nm) | IHP MPW | March 2026 | 1mm x 1.4mm | [`ihp-sg13cmos-sparx-mpw-2026-03`](ihp-sg13cmos-sparx-mpw-2026-03) |
+| [TinyWhisper](#tinywhisper-ihp-mpw-tapeout) | IHP SG13CMOS (130 nm) | IHP MPW | March 2026 | 2mm x 2mm | [`ihp-sg13cmos-tinywhisper-mpw-2026-03`](ihp-sg13cmos-tinywhisper-mpw-2026-03) |
 | [Multi-Project Chip](#multi-project-chip-waferspace) | GF180MCU (180 nm) | wafer.space run 1 | December 2025 | 4mm x 5mm | [`gf180mcuD-mpc-ws-run1`](gf180mcuD-mpc-ws-run1) |
 | [IQ Modulator](#iq-modulator-tiny-tapeout) | SkyWater SKY130A (130 nm) | Tiny Tapeout ttsky25b | November 2025 | 334.88µm x 225.76µm | [`sky130A-iqmod-ttsky25b`](sky130A-iqmod-ttsky25b) |
 
@@ -35,7 +35,7 @@ The structure of this gallery is inspired by [mole99/chip-gallery](https://githu
 An open-source, frequency-scalable six-port millimeter-wave receiver.
 
 <div align="center">
-  <img src="ihp-sg13cmos-sparx-mpw/ihp-sg13cmos-sparx-mpw_white.png" alt="SPARX" width="600">
+  <img src="ihp-sg13cmos-sparx-mpw-2026-03/ihp-sg13cmos-sparx-mpw-2026-03_white.png" alt="SPARX" width="600">
   <p><em>Render of the ihp-sg13cmos SPARX RFIC (1mm x 1.4mm).</em></p>
 </div>
 
@@ -64,7 +64,7 @@ Repository: https://github.com/iic-jku/SG13CMOS_SPARX
 A fully integrated multi-mode short-wave transmitter for amateur radio.
 
 <div align="center">
-  <img src="ihp-sg13cmos-tinywhisper-mpw/ihp-sg13cmos-tinywhisper-mpw_white.png" alt="TinyWhisper" width="600">
+  <img src="ihp-sg13cmos-tinywhisper-mpw-2026-03/ihp-sg13cmos-tinywhisper-mpw-2026-03_white.png" alt="TinyWhisper" width="600">
   <p><em>Render of the ihp-sg13cmos TinyWhisper SoC (2mm x 2mm).</em></p>
 </div>
 
@@ -137,7 +137,7 @@ This is the first design of the IQ modulator that forms the analog front-end of 
 
 The modulator takes differential baseband I and Q signals, filters them with 3rd-order MFB low-pass filters and upconverts them with passive mixers that are driven by the four local oscillator phases. The two paths are summed at the RF output of the transmitter.
 
-- Designers: Simon Dorrer (OE3SDE), Jonathan Hager (DK7JH, JMU Würzburg), Matthias Jung (DL9MJ, JMU Würzburg) and Harald Pretl
+- Designers: Simon Dorrer (OE3SDE) and Harald Pretl
 - Technology: SkyWater SKY130A (130 nm)
 - Die size: 334.88µm x 225.76µm (2x2 Tiny Tapeout tiles)
 - Supply voltage: 1.8 V

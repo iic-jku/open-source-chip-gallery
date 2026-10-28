@@ -1,8 +1,6 @@
 # Open-Source Chip Gallery
 
-(c) 2025-2026 Simon Dorrer and contributors
-
-Institute for Integrated Circuits and Quantum Computing (IICQC), Johannes Kepler University (JKU), Linz, Austria
+(c) 2025-2026 Department for Integrated Circuits, Johannes Kepler University (JKU), Linz, Austria
 
 > [!IMPORTANT]
 > This repository requires the [IIC-OSIC-TOOLS](https://github.com/iic-jku/IIC-OSIC-TOOLS) container with tag `2026.08` or later.

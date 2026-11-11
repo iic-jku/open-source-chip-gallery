@@ -74,9 +74,14 @@ A fully integrated multi-mode short-wave transmitter for amateur radio.
   <p><em>Render of the ihp-sg13cmos TinyWhisper SoC (2mm x 2mm).</em></p>
 </div>
 
-TinyWhisper is a short-wave transmitter chip for the amateur radio bands that supports WSPR, FT8, SSB and CW. It combines a RISC-V based digital core with an analog IQ modulator on a single die. Besides ham radio use, the chip is meant for teaching in university courses and as a regression test case for open-source EDA tools. It was taped out in March 2026 and is currently in production. Delivery is expected in December 2026.
+TinyWhisper is a short-wave transmitter chip for the amateur radio bands that supports WSPR, FT8, SSB and CW. It combines a RISC-V based digital core with an analog IQ modulator on a single die. Besides ham radio use, the chip is meant for teaching in university courses and as a regression test case for open-source EDA tools. It was taped out in March 2026, and the bare dies are back from fabrication.
 
-The image above shows the final layout with the TinyWhisper logo. The RISC-V core is the large block left of the center, and the analog IQ modulator is the small macro to the right of it.
+<div align="center">
+  <img src="ihp-sg13cmos-tinywhisper-mpw-2026-03/ihp-sg13cmos-tinywhisper-mpw-2026-03_die.png" alt="Die photo of TinyWhisper" width="600">
+  <p><em>Die photo of the ihp-sg13cmos TinyWhisper SoC (2mm x 2mm).</em></p>
+</div>
+
+The render above shows the final layout with the TinyWhisper logo. The RISC-V core is the large block left of the center, and the analog IQ modulator is the small macro to the right of it.
 
 - Designers: Simon Dorrer (OE3SDE), Jonathan Hager (DK7JH, JMU Würzburg), Matthias Jung (DL9MJ, JMU Würzburg) and Harald Pretl
 - Technology: IHP SG13CMOS (130 nm)
